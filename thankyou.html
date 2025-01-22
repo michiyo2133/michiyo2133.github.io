@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/A.png">
+    <title>ขอบคุณที่ซื้อสินค้า</title>
+    <style>
+        /* พื้นฐาน */
+        body {
+            font-family: 'Prompt', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            background: url('img/bgt.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+
+        /* กล่องกลาง */
+        .thank-you-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* ข้อความ */
+        .thank-you-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ff4081;
+        }
+
+        .thank-you-container p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .thank-you-container .tracking-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #ff4081, #a745fc);
+            padding: 10px 15px;
+            border-radius: 10px;
+            color: #fff;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        /* ปุ่มกลับหน้าหลัก */
+        .thank-you-container a {
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #5f0467, #1b0046);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .thank-you-container a:hover {
+            background: linear-gradient(135deg, #1b0046, #5f0467);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>ขอบคุณที่ซื้อสินค้า!</h1>
+        <p>คำสั่งซื้อของคุณได้รับการยืนยันแล้ว</p>
+        <p>เลขพัสดุของคุณ:</p>
+        <div class="tracking-number">TH1234567890</div>
+        <p>สามารถติดตามสถานะพัสดุได้ทางเว็บไซต์ของเรา</p>
+        <a href="indexL.html">กลับหน้าหลัก</a>
+    </div>
+</body>
+
+    <script>
+    // ฟังก์ชันสร้างเลขพัสดุแบบสุ่ม
+    function generateTrackingNumber() {
+        const prefix = "TH";
+        const randomNumber = Math.floor(1000000000 + Math.random() * 9000000000);
+        return prefix + randomNumber;
+    }
+
+    // แสดงเลขพัสดุในหน้า
+    document.querySelector('.tracking-number').textContent = generateTrackingNumber();
+</script>
+
+
+</html>
